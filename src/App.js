@@ -9,7 +9,7 @@ import DisplayWeather from "./components/DisplayWeather";
 function App() {
   return (
     <WeatherProvider>
-      <div id="game">
+      <div id="weather_container">
         <Form />
         <DisplayWeather />
       </div>

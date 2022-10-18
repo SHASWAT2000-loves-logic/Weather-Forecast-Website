@@ -20,7 +20,7 @@ body{
 
 /* Creating the overlay */
 
-#game{
+#weather_container{
   background: rgba(13, 110, 139,0.75);
   color:#fff;
   height: 100vh;
@@ -29,7 +29,7 @@ body{
 
 /* Showing the background image in the overlay */
 
-#game::before{
+#weather_container::before{
   content: '';
   background: url('./assets/bg_image.jpg') no-repeat center center/cover;
   position: absolute;
@@ -120,6 +120,12 @@ input:focus::placeholder {
   transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }
 
+.spinner_image img{
+  width:300px;
+  height:300px;
+  display: block;
+  margin:auto;
+}
 /* Styling the card that will display the weather */
 
 .card{
@@ -132,3 +138,7 @@ input:focus::placeholder {
   color: black;
 }
 
+.weather_info{
+  text-align: center;
+  font-size: 24px;
+}

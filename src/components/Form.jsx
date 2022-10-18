@@ -4,10 +4,10 @@
 import {useContext} from "react"
 import WeatherContext from "../context/WeatherContext";
 function Form() {
-  const {handleSubmit} = useContext(WeatherContext);
+  const {getWeatherInfo} = useContext(WeatherContext);
   return (
     <div className="form">
-      <form>
+      <form onSubmit={getWeatherInfo}>
         <div className="form_flex">
           <div>
           <input
@@ -17,7 +17,7 @@ function Form() {
           ></input>
           </div>
           <div>
-          <button type="button" className="btn">
+          <button type="submit" className="btn">
             <span>Check!</span>
           </button>
           </div>
