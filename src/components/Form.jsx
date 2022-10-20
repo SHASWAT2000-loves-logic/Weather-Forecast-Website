@@ -13,7 +13,7 @@ function Form() {
           <input
             className="search_city"
             type="search"
-            placeholder="London"  
+            placeholder="Search city"  
           ></input>
           </div>
           <div>

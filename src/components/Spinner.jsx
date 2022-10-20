@@ -1,3 +1,5 @@
+// This is the loader that is displayed while we fetch data from the API
+
 import spinner from "../assets/spinner.gif"
 
 function Spinner() {

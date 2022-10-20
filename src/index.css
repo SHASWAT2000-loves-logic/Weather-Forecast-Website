@@ -18,6 +18,10 @@ body{
   font-family: 'Poppins', sans-serif;
 }
 
+ul{
+  list-style: none;
+}
+
 /* Creating the overlay */
 
 #weather_container{
@@ -43,14 +47,14 @@ body{
 /* styling the form */
 
 .form{
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 
 /* Centering the text field and the submit button */
 
 .form_flex{
   display: flex;
-  padding-top: 180px;
+  padding-top: 120px;
   align-items: center;
   justify-content: center;
 }
@@ -60,7 +64,7 @@ body{
 input{
   color:black;
   font-size: 20px;
-  width: 370px;
+  width: 470px;
   border: 3px solid black;
   display: block;
   padding: 10px 4px 10px 43px;
@@ -110,8 +114,8 @@ input:focus::placeholder {
   height: 535%;
   width: 220%;
   background: #52b71f;
-  -webkit-transition: all .7s ease-in-out;
-  transition: all .7s ease-in-out;
+  -webkit-transition: all .6s ease-in-out;
+  transition: all .6s ease-in-out;
   -webkit-transform: translateX(-100%) translateY(-25%) rotate(45deg);
   transform: translateX(-100%) translateY(-25%) rotate(45deg);
 }
@@ -129,16 +133,85 @@ input:focus::placeholder {
 /* Styling the card that will display the weather */
 
 .card{
-  padding: 40px;
-  max-width: 80%;
+  padding: 40px 80px;
+  max-width: 70%;
   margin: auto;
-  background-color: #f1f1f1;
-  border-radius: 8px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0, 0.23);
-  color: black;
+  background-color: #16394c;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(255,255,255,0.19), 0 6px 6px rgba(255,255,255, 0.23);
+  border: 4px solid #608094;
+  color: #f1f1f1;
 }
 
-.weather_info{
+/* styling the location name */
+
+.location_info{
   text-align: center;
   font-size: 24px;
+  margin-bottom: 10px;
 }
+
+/* styling the main temperature */
+
+.main_weather{
+  display: flex;
+  justify-content: center;
+  font-size: 34px;
+}
+
+.main_weather h3{
+  margin-right: 30px;
+  font-weight: 500;
+}
+
+/* styling the weather icon */
+
+.main_weather img{
+  width:60px;
+  height:60px;
+}
+
+.main_exponent{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* styling the general weather */
+
+.general_weather{
+  display: flex;
+  font-size: 20px;
+  margin-bottom: 40px;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.general_exponent{
+  font-size: 12px;
+}
+
+/* day specific weather */
+
+.day_weather{
+  margin-left: 70px;
+  margin-right: 160px;
+}
+
+/* future weather */
+
+.weather_flex{
+  display: flex;
+  justify-content: space-between;
+
+}
+.future_weather{
+  font-size: 20px;
+}
+.future_weather li:first-child{
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.celsius{
+  font-size: 13px;
+}
+
