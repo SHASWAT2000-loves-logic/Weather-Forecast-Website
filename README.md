@@ -3,9 +3,13 @@
 
 **Technologies used** - HTML, CSS, JavaScript
 
-**Framework used** - React
+**Frameworks/Libraries** - React
 
 **3rd party API used** - Weather DB. It is a free to use weather API that provides **hourly** weather updates and the weather forecast for the upcoming days. It requires no API key. 
+
+**React packages used** - 
+
+1. uuid - For generating unique values that will be passed as keys to list items
 
 **Commit history** - 
 
@@ -14,6 +18,8 @@
 **Second major commit (18/10/2022)** - Added the loader for user experience (UX), added functionality of displaying weather data information about a location according to user input.
 
 **Third major commit (19/10/2022)** - Completed the UI, which shows the current weather and predicted weather for the next 5 days.  
+
+**Fourth major commit (20/10/2022)** - Added user input validation, error message, unique keys to list items
 
 **Issues/Bugs** - 
 
