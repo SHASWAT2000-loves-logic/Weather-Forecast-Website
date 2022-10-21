@@ -47,14 +47,14 @@ ul{
 /* styling the form */
 
 .form{
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 /* Centering the text field and the submit button */
 
 .form_flex{
   display: flex;
-  padding-top: 120px;
+  padding-top: 100px;
   align-items: center;
   justify-content: center;
 }
@@ -130,11 +130,12 @@ input:focus::placeholder {
   display: block;
   margin:auto;
 }
+
 /* Styling the card that will display the weather */
 
 .card{
   padding: 40px 80px;
-  max-width: 70%;
+  max-width: 65%;
   margin: auto;
   background-color: #16394c;
   border-radius: 10px;
@@ -151,12 +152,12 @@ input:focus::placeholder {
   margin-bottom: 10px;
 }
 
-/* styling the main temperature */
+/* styling the current temperature */
 
 .main_weather{
   display: flex;
   justify-content: center;
-  font-size: 34px;
+  font-size: 32px;
 }
 
 .main_weather h3{
@@ -193,13 +194,13 @@ input:focus::placeholder {
 /* day specific weather */
 
 .day_weather{
-  margin-left: 70px;
   margin-right: 160px;
 }
 
 /* future weather */
 
 .weather_flex{
+  margin-right: 50px;
   display: flex;
   justify-content: space-between;
 
@@ -207,6 +208,9 @@ input:focus::placeholder {
 .future_weather{
   font-size: 20px;
 }
+
+/* highlighting the days of the week in the future forecast */
+
 .future_weather li:first-child{
   font-weight: 600;
   margin-bottom: 10px;
@@ -215,3 +219,13 @@ input:focus::placeholder {
   font-size: 13px;
 }
 
+/* styling the error message */
+
+.error{
+  margin-top: -50px;
+  margin-right: 90px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+}

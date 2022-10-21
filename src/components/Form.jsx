@@ -14,6 +14,7 @@ function Form() {
             className="search_city"
             type="search"
             placeholder="Search city"  
+            required
           ></input>
           </div>
           <div>

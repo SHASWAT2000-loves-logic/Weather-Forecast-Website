@@ -22,6 +22,12 @@ export const WeatherProvider = ({ children }) => {
   // to store the array that contains the weather forecast of the next 5 days
   const [futureForecast, setFutureForecast] = useState([]);
 
+  // to show error message
+  const [showError, setShowError] = useState(false);
+
+  // to display weather information
+  const [showData, setShowData] = useState(true);
+
   // using the fetch API to fetch the data from OpenWeatherMap API to display the weather
   // the process of fetching data is asynchronous
 
@@ -29,21 +35,39 @@ export const WeatherProvider = ({ children }) => {
     const response = await fetch(
       `https://weatherdbi.herokuapp.com/data/weather/${city}`
     );
-
     const data = await response.json();
-    console.log(data);
 
-    // we will display the weather forecast for the next 5 days
-    setFutureForecast(data.next_days.slice(1, 6));
-    setWeatherData(data);
-    setLoading(false);
+    // catching invalid city/location
+    if (data.status === "fail") {
+      setShowData(false);
+      setShowError(true); //show error
+      setLoading(false);
+
+      // error message is removed 3 seconds after its initial appearance
+      // no weather information is displayed
+      setTimeout(() => {
+        setShowError(false);
+        setShowData(false);
+      }, 3000);
+    } else {
+      setShowData(true);
+      // storing the weather forecast for the next 5 days
+      setFutureForecast(data.next_days.slice(1, 6));
+
+      // storing the fetched data
+      setWeatherData(data);
+
+      setShowError(false);
+      setLoading(false);
+    }
   };
 
-  // When the user enters the city and clicks on the check button in the form, this function is called.
-  // We just update the city entered by the user in the API call to fetch weather of that city
+  // Handles submit form event
+  // We update the city entered by the user in the API call to fetch weather of that city
 
   const getWeatherInfo = (e) => {
     setLoading(true);
+    setShowError(false);
     setCity(e.target[0].value); //updates the city
     e.target[0].value = "";
     e.preventDefault();
@@ -55,6 +79,8 @@ export const WeatherProvider = ({ children }) => {
         loading,
         city,
         futureForecast,
+        showError,
+        showData,
         getWeatherInfo,
         fetchWeather,
       }}
