@@ -124,11 +124,13 @@ input:focus::placeholder {
   transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }
 
+/* styling the loader image */
+
 .spinner_image img{
-  width:300px;
-  height:300px;
+  width:400px;
+  height:400px;
   display: block;
-  margin:auto;
+  margin:100px auto;
 }
 
 /* Styling the card that will display the weather */
@@ -147,14 +149,21 @@ input:focus::placeholder {
 /* styling the location name */
 
 .location_info{
+  
+  display: grid;
+  grid-template-columns: 10fr 1fr;
   text-align: center;
   font-size: 24px;
-  margin-bottom: 10px;
+}
+
+.location_info h3{
+  margin-left: 230px;
 }
 
 /* styling the current temperature */
 
 .main_weather{
+  margin-top: -30px;
   display: flex;
   justify-content: center;
   font-size: 32px;
@@ -184,11 +193,12 @@ input:focus::placeholder {
   font-size: 20px;
   margin-bottom: 40px;
   line-height: 1.8;
-  font-weight: 400;
+  font-weight: 400 ;
+  margin-right: 0;
 }
 
 .general_exponent{
-  font-size: 12px;
+  font-size: 14px;
 }
 
 /* day specific weather */
@@ -200,7 +210,6 @@ input:focus::placeholder {
 /* future weather */
 
 .weather_flex{
-  margin-right: 50px;
   display: flex;
   justify-content: space-between;
 
@@ -216,7 +225,7 @@ input:focus::placeholder {
   margin-bottom: 10px;
 }
 .celsius{
-  font-size: 13px;
+  font-size: 14px;
 }
 
 /* styling the error message */
@@ -229,3 +238,109 @@ input:focus::placeholder {
   font-weight: bold;
   font-size: 22px;
 }
+
+/* styling the toggle switch */
+
+/* the background of the toggle switch */
+.app-cover {
+  margin-left: 50px;
+  width: 200px;
+  margin-top: -50px;
+  counter-reset: button-counter;
+}
+
+.toggle-button-cover {
+  display: table-cell;
+  position: relative;
+  width: 200px;
+  height: 140px;
+  box-sizing: border-box;
+}
+
+.button-cover,
+.knobs,
+.layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.button {
+  position: relative;
+  top: 50%;
+  width: 110px;
+  height: 45px;
+  margin: -20px auto 0 auto;
+  overflow: hidden;
+}
+
+.button.r,
+.button.r .layer {
+  border-radius: 100px;
+}
+
+.button.b2 {
+  border-radius: 2px;
+}
+
+/* styling the checkbox */
+.checkbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.knobs {
+  z-index: 2;
+}
+
+.layer {
+  width: 100%;
+  background-color: #ebf7fc;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+/* default state of checkbox */
+#button-1 .knobs:before {
+  content: '°C';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 25px;
+  height: 20px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  padding: 9px 4px;
+  background-color: #03a9f4;
+  border-radius: 50%;
+  transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+}
+
+/* when the checkbox is checked */
+#button-1 .checkbox:checked + .knobs:before {
+  content: '°F';
+  left: 72px;
+  background-color: #f44336;
+}
+
+#button-1 .checkbox:checked ~ .layer {
+  background-color: #fcebeb;
+}
+
+#button-1 .knobs,
+#button-1 .knobs:before,
+#button-1 .layer {
+  transition: 0.3s ease all;
+}
+

@@ -11,22 +11,31 @@ const WeatherContext = new createContext();
 
 export const WeatherProvider = ({ children }) => {
   // to store the fetched data
+  // initially we don't have any data
   const [weatherData, setWeatherData] = useState({});
 
-  // show loading state while the data is being fetched
+  // stores the status of the loader/spinner
+  // while data is being fetched, the spinner is displayed
   const [loading, setLoading] = useState(true);
 
-  // to store the location/city entered by the user. Default location is London
+  // to store the location/city entered by the user
+  // default location is London
   const [city, setCity] = useState("London");
 
   // to store the array that contains the weather forecast of the next 5 days
   const [futureForecast, setFutureForecast] = useState([]);
 
   // to show error message
+  // initially we don't display error message
   const [showError, setShowError] = useState(false);
 
   // to display weather information
+  // initially we display weather in London
   const [showData, setShowData] = useState(true);
+
+  // stores the status of the checkbox
+  // initially the checkbox is not checked
+  const [checkedState, setCheckedState] = useState(false);
 
   // using the fetch API to fetch the data from OpenWeatherMap API to display the weather
   // the process of fetching data is asynchronous
@@ -62,15 +71,30 @@ export const WeatherProvider = ({ children }) => {
     }
   };
 
-  // Handles submit form event
+  // Handles form submit event or when the user has entered the city name and clicks the "check" button
   // We update the city entered by the user in the API call to fetch weather of that city
 
   const getWeatherInfo = (e) => {
     setLoading(true);
     setShowError(false);
-    setCity(e.target[0].value); //updates the city
+    setCity(e.target[0].value); //updates the city name in the API
     e.target[0].value = "";
     e.preventDefault();
+  };
+
+  // when the checkbox is clicked, we display weather in degree Fahrenheit
+
+  const celsiusToFahren = (e) => {
+    if (e.target.checked) {
+      setCheckedState((checked) => !checked);
+    }
+  };
+
+  // this is the default/unchecked state that displays weather in degree Celsius
+  const fahrenToCelsius = (e) => {
+    if (!e.target.checked) {
+      setCheckedState((checked) => !checked);
+    }
   };
   return (
     <WeatherContext.Provider
@@ -81,8 +105,11 @@ export const WeatherProvider = ({ children }) => {
         futureForecast,
         showError,
         showData,
+        checkedState,
         getWeatherInfo,
         fetchWeather,
+        celsiusToFahren,
+        fahrenToCelsius,
       }}
     >
       {children}
