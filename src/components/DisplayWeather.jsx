@@ -71,7 +71,7 @@ function DisplayWeather() {
             <ul className="future_weather" key={uuid()}>
               <li>{weatherDay.day}</li>
               <li><img src={weatherDay.iconURL} alt="weather icon"/></li>
-              <li>{weatherDay.max_temp.c}<sup className="celsius">&deg;</sup> | {weatherDay.min_temp.c}<sup className="celsius">&deg;</sup></li>
+              <li>{weatherDay.max_temp.c}<sup className="unit">&deg;</sup> | {weatherDay.min_temp.c}<sup className="unit">&deg;</sup></li>
             </ul>
           )})}
           
@@ -128,7 +128,7 @@ function DisplayWeather() {
             <ul className="future_weather" key={uuid()}>
               <li>{weatherDay.day}</li>
               <li><img src={weatherDay.iconURL} alt="weather icon"/></li>
-              <li>{weatherDay.max_temp.f}<sup className="celsius">&deg;</sup> | {weatherDay.min_temp.f}<sup className="celsius">&deg;</sup></li>
+              <li>{weatherDay.max_temp.f}<sup className="unit">&deg;</sup> | {weatherDay.min_temp.f}<sup className="unit">&deg;</sup></li>
             </ul>
           )})}
           
