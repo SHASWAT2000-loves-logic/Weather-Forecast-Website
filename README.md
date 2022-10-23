@@ -29,7 +29,7 @@ You can find the website on https://weather-forecast-murex.vercel.app
 
 **Issues/Bugs** - 
 
-**1. OpenWeatherMap API** - The free version of OpenWeatherMap API doesn't contain the data for weather forecast of upcoming days and its weather icons are not clear at all. Because of this, I switched to Weather DB which has more useful data that can be used.  
+1. **OpenWeatherMap API** - The free version of OpenWeatherMap API doesn't contain the data for weather forecast of upcoming days and its weather icons are not clear at all. Because of this, I switched to Weather DB which has more useful data that can be used.  
 
 # Getting Started with Create React App
 
