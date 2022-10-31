@@ -42,7 +42,7 @@ export const WeatherProvider = ({ children }) => {
 
   const fetchWeather = async () => {
     const response = await fetch(
-      `https://weatherdbi.herokuapp.com/data/weather/${city}`
+      `https://www.meteosource.com/api/v1/free/point?place_id=${city}&sections=current%2Cdaily&language=en&units=auto&key=${process.env.REACT_APP_API_KEYl}`
     );
     const data = await response.json();
 
@@ -61,7 +61,7 @@ export const WeatherProvider = ({ children }) => {
     } else {
       setShowData(true);
       // storing the weather forecast for the next 5 days
-      setFutureForecast(data.next_days.slice(1, 6));
+      setFutureForecast(data.daily.data.slice(1, 6));
 
       // storing the fetched data
       setWeatherData(data);
