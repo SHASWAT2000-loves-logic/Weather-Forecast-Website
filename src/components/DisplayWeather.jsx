@@ -34,8 +34,9 @@ function DisplayWeather() {
 
         <div className="location_info">
 
-          <h3 className="city">{city}</h3>
+          <h3 className="city">{city.charAt(0).toUpperCase() + city.slice(1).toLowerCase()}</h3>
 
+          {/* toggle button */}
           <div className="app-cover">
             <div className="row">
               <div className="toggle-button-cover">
@@ -51,6 +52,7 @@ function DisplayWeather() {
           </div> 
         </div>
 
+        {/* actual temperature */}
         <div className="main_weather">
           <h3>{weatherData.current.temperature}<sup className="main_exponent">&deg;C</sup></h3>
           <img src={images[`${weatherData.current.icon_num}.png`]} alt="weather icon" />
@@ -60,7 +62,7 @@ function DisplayWeather() {
           <div className="day_weather">
             <p>Max temp of day: {weatherData.daily.data[0].all_day.temperature_max}<sup className="general_exponent">&deg;C</sup></p>
             <p>Min temp of day: {weatherData.daily.data[0].all_day.temperature_min}<sup className="general_exponent">&deg;C</sup></p>
-            <p>Last updated: {new Date().toLocaleString("en-US", { timeZone: `${weatherData.timezone}` })}</p>
+            <p>Local date & time: {new Date().toLocaleString("en-US", { timeZone: `${weatherData.timezone}` })}</p>
           </div>
 
           <div className="other_description">
@@ -70,6 +72,7 @@ function DisplayWeather() {
           </div>
         </div>
 
+        {/* displaying whether forecast for upcoming days */}
         <div className="weather_flex">
           {futureForecast.map((weatherDay) =>{
 
@@ -78,7 +81,7 @@ function DisplayWeather() {
             //gives date in form of yy-mm-dd
             let localDate=weatherDay.day; 
 
-            // replaces all - (hyphen) with , ()comma
+            // replaces all - (hyphen) with , (comma)
             localDate=localDate.replace(/-/g, ",");
 
             return (
@@ -102,6 +105,8 @@ function DisplayWeather() {
 
         <div className="location_info">
           <h3 className="city">{city}</h3>
+
+          {/* toggle button */}
           <div className="app-cover">
             <div className="row">
               <div className="toggle-button-cover">
@@ -116,7 +121,8 @@ function DisplayWeather() {
             </div>    
           </div> 
         </div>
-      
+
+      {/* actual temperature */}
         <div className="main_weather">
           <h3>{celsiusToFahrenheit(weatherData.current.temperature).toFixed(1)}<sup className="main_exponent">&deg;F</sup></h3>
           <img src={images[`${weatherData.current.icon_num}.png`]} alt="weather icon" />
@@ -147,6 +153,7 @@ function DisplayWeather() {
             // replaces all - (hyphen) with , ()comma
             localDate=localDate.replace(/-/g, ",");
             
+            {/* displaying whether forecast for upcoming days */}
             return (
             <ul className="future_weather" key={uuid()}>
               <li>{new Date(localDate).toLocaleDateString('en-US', {weekday:'long'})}</li>

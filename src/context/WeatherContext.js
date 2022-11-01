@@ -41,13 +41,27 @@ export const WeatherProvider = ({ children }) => {
   // the process of fetching data is asynchronous
 
   const fetchWeather = async () => {
-    const response = await fetch(
-      `https://www.meteosource.com/api/v1/free/point?place_id=${city}&sections=current%2Cdaily&language=en&units=auto&key=${process.env.REACT_APP_API_KEYl}`
-    );
-    const data = await response.json();
+    // fetching data
+    try {
+      const response = await fetch(
+        `https://www.meteosource.com/api/v1/free/point?place_id=${city}&sections=current%2Cdaily&language=en&units=auto&key=${process.env.REACT_APP_API_KEY}`
+      );
 
-    // catching invalid city/location
-    if (data.status === "fail") {
+      const data = await response.json();
+
+      setShowData(true);
+
+      // storing the weather forecast for the next 5 days
+      setFutureForecast(data.daily.data.slice(1, 6));
+
+      // storing the fetched data
+      setWeatherData(data);
+
+      setShowError(false);
+      setLoading(false);
+    } catch (e) {
+      // catching inavlid city/location entered by the user
+
       setShowData(false);
       setShowError(true); //show error
       setLoading(false);
@@ -58,16 +72,6 @@ export const WeatherProvider = ({ children }) => {
         setShowError(false);
         setShowData(false);
       }, 3000);
-    } else {
-      setShowData(true);
-      // storing the weather forecast for the next 5 days
-      setFutureForecast(data.daily.data.slice(1, 6));
-
-      // storing the fetched data
-      setWeatherData(data);
-
-      setShowError(false);
-      setLoading(false);
     }
   };
 
