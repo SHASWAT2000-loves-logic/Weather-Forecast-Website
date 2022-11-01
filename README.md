@@ -33,7 +33,7 @@ You can find the website by clicking on this link - https://weather-forecast-lya
 
 1. **OpenWeatherMap API (resolved)** - The free version of OpenWeatherMap API doesn't contain the data for weather forecast of upcoming days and its weather icons are not clear at all. Because of this, I switched to Weather DB which has more useful data that can be used.  
 
-2. **WeatherDB API occasionally doesn't work (as of October 25 2022)** - WeatherDB API doesn't work every time, which leads to error 404, so I switched to Meteosource API, which has support 24 hours a day.
+2. **WeatherDB API occasionally doesn't work (as of October 25 2022)** - WeatherDB API wasn't consistently working every time, and this led to 404 error. So I switched to Meteosource API, which provides its services 24 hours a day and has full support. 
 
 3. **Environment variable for API key is not being recognized by Github (resolved)** - This was mostly a deploying problem related to Vercel rather than Github. I created an environment variable in Vercel and the application started working smoothly.  
 
