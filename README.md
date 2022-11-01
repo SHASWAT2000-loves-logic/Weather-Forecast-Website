@@ -1,11 +1,13 @@
 
-**Project Description** - This repo contains the code to the Weather Forecast Website that can be used to check the current weather and the weather forecast for the upcoming 5 days at different locations in the world. When the user enters a city name, they will be able to check the local temperature, maximum temperature, minimum temperature of the day along with the general description of the weather like cloudy/windy/misty, wind speed and precipitation. Additionally, they will be able to see the predicted weather for the next 5 days. There is also a toggle button that allows the user to check the weather in degree Fahrenheits as the default weather is shown in degree Celsius.  
+**Project Description** - This repo contains the code to the Weather Forecast Website that can be used to check the current weather and the weather forecast for the upcoming 5 days of different cities in the world. When the user enters a city name, they will be able to check the local temperature, maximum temperature, minimum temperature of the day along with the general description of the weather like cloudy/windy/misty, wind speed and precipitation. Additionally, they will be able to see the predicted weather for the next 5 days. There is also a toggle button that allows the user to check the weather in degree Fahrenheits as the default weather is shown in degree Celsius.  
+
+You can find the website by clicking on this link - https://weather-forecast-lyart.vercel.app/
 
 **Technologies used** - HTML, CSS, JavaScript
 
 **Frameworks/Libraries** - React
 
-**3rd party API used** - Meteosource API - It has a free tier that provides current weather and the weather forecast for the upcoming days. 
+**3rd party API used** - Meteosource API - It has a free tier that provides current weather and the weather forecast for the upcoming days. It has a maximum limit of 10 API calls per minute and 400 API calls per day 
 
 **React packages used** - 
 
@@ -25,15 +27,19 @@
 
 **Fifth major commit (23/10/2022)** - Added functionality of conversion to degree Fahrenheits by using toggle switch
 
-**Final commit (23/10/2022)** - Updated the UI and deployed the website on Vercel. 
+**Final commit (1/11/2022)** - Updated the code to accomodate the fetched weather information from the Meteosource API and deployed the website on Vercel. 
 
 **Issues/Bugs** - 
 
-1. **OpenWeatherMap API** - The free version of OpenWeatherMap API doesn't contain the data for weather forecast of upcoming days and its weather icons are not clear at all. Because of this, I switched to Weather DB which has more useful data that can be used.  
+1. **OpenWeatherMap API (resolved)** - The free version of OpenWeatherMap API doesn't contain the data for weather forecast of upcoming days and its weather icons are not clear at all. Because of this, I switched to Weather DB which has more useful data that can be used.  
 
-2. **WeatherDB API not working any longer (October 25 2022)** - WeatherDB API stopped working, so I switched to Meteosource API, which has a free tier that allows 10 calls/minute and 400 calls/day 
+2. **WeatherDB API occasionally doesn't work (as of October 25 2022)** - WeatherDB API doesn't work every time, which leads to error 404, so I switched to Meteosource API, which has support 24 hours a day.
 
-# Getting Started with Create React App
+3. **Environment variable for API key is not being recognized by Github (resolved)** - This was mostly a deploying problem related to Vercel rather than Github. I created an environment variable in Vercel and the application started working smoothly.  
+
+# Getting Started with this project
+
+To run the code on your machine, clone this repository
 
 ## Available Scripts
 
@@ -45,6 +51,6 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
-You may also see any lint errors in the console.
+
 
 
