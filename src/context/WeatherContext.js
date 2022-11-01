@@ -44,7 +44,7 @@ export const WeatherProvider = ({ children }) => {
     // fetching data
     try {
       const response = await fetch(
-        `https://www.meteosource.com/api/v1/free/point?place_id=${city}&sections=current%2Cdaily&language=en&units=auto&key=${process.env.REACT_APP_API_KEY}`
+        `https://www.meteosource.com/api/v1/free/point?place_id=${city}&sections=current%2Cdaily&language=en&units=metric&key=${process.env.REACT_APP_API_KEY}`
       );
 
       const data = await response.json();
@@ -71,7 +71,7 @@ export const WeatherProvider = ({ children }) => {
       setTimeout(() => {
         setShowError(false);
         setShowData(false);
-      }, 3000);
+      }, 4000);
     }
   };
 
@@ -81,7 +81,24 @@ export const WeatherProvider = ({ children }) => {
   const getWeatherInfo = (e) => {
     setLoading(true);
     setShowError(false);
-    setCity(e.target[0].value); //updates the city name in the API
+    let cityName = e.target[0].value; // storing the user input
+
+    // removing all empty spaces at the start and end of the user input
+
+    cityName = cityName.trim();
+
+    // API doesn't allow city name to contain whitespaces, instead it allows hyphen (-) between words
+    // Accepted - New-York-City, Error - New York City
+    // for user experience I have made sure that the whitespaces between the words entered by the user are converted to hyphen
+    // this allows us to make the right API call to fetch weather of that city
+
+    // checking whether the user input has a whitespace in it like New York City, New Delhi etc
+    // then we reformat the city name entered by the user to a format accepted by the API
+
+    if (cityName.includes(" ")) {
+      cityName = cityName.replace(/\s+/g, "-"); //replacing whitespace (" ") between words to hyphen ("-")
+    }
+    setCity(cityName); //updates the city name in the API
     e.target[0].value = "";
     e.preventDefault();
   };

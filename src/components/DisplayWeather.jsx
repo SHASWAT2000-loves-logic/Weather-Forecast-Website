@@ -34,7 +34,7 @@ function DisplayWeather() {
 
         <div className="location_info">
 
-          <h3 className="city">{city.charAt(0).toUpperCase() + city.slice(1).toLowerCase()}</h3>
+          <h3 className="city">{city.includes("-") ? city.replaceAll('-', ' ').replace(/(?:^|\s)\S/g, a => a.toUpperCase()): city.charAt(0).toUpperCase() + city.slice(1).toLowerCase()}</h3>
 
           {/* toggle button */}
           <div className="app-cover">
@@ -67,8 +67,8 @@ function DisplayWeather() {
 
           <div className="other_description">
             <p>Description: {weatherData.current.summary}</p>
-            <p>Precipitation: {weatherData.daily.data[0].all_day.precipitation.total} %</p>
-            <p>Wind speed: {weatherData.current.wind.speed} km/h</p>
+            <p>Precipitation: {weatherData.daily.data[0].all_day.precipitation.total}%</p>
+            <p>Wind speed: {weatherData.current.wind.speed} m/s</p>
           </div>
         </div>
 
@@ -104,7 +104,8 @@ function DisplayWeather() {
       <div className="card">
 
         <div className="location_info">
-          <h3 className="city">{city}</h3>
+
+        <h3 className="city">{city.includes("-") ? city.replaceAll('-', ' ').replace(/(?:^|\s)\S/g, a => a.toUpperCase()): city.charAt(0).toUpperCase() + city.slice(1).toLowerCase()}</h3>
 
           {/* toggle button */}
           <div className="app-cover">
@@ -132,14 +133,14 @@ function DisplayWeather() {
           <div className="day_weather">
             <p>Max temp of day: {celsiusToFahrenheit(weatherData.daily.data[0].all_day.temperature_max).toFixed(1)}<sup className="general_exponent">&deg;F</sup></p>
             <p>Min temp of day: {celsiusToFahrenheit(weatherData.daily.data[0].all_day.temperature_min).toFixed(1)}<sup className="general_exponent">&deg;F</sup></p>
-            <p>Last updated: {new Date().toLocaleString("en-US", { timeZone: `${weatherData.timezone}` })}</p>
+            <p>Local date & time: {new Date().toLocaleString("en-US", { timeZone: `${weatherData.timezone}` })}</p>
 
           </div>
 
           <div className="other_description">
             <p>Description: {weatherData.current.summary}</p>
-            <p>Precipitation: {weatherData.daily.data[0].all_day.precipitation.total} %</p>
-            <p>Wind speed: {weatherData.current.wind.speed} km/h</p>
+            <p>Precipitation: {weatherData.daily.data[0].all_day.precipitation.total}%</p>
+            <p>Wind speed: {weatherData.current.wind.speed} m/s</p>
           </div>
         </div>
 
