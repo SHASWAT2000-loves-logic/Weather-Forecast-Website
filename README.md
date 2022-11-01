@@ -1,17 +1,17 @@
 
-**Project Description** - This repo contains the code to the Weather Forecast Website that can be used to check hourly weather and the weather forecast for the upcoming days at different locations in the world. When the user enters a city name, they will be able to check the local temperature, maximum temperature, minimum temperature of the day along with the general description of the weather like cloudy/windy/misty, humidity and precipitation. Additionally, they will be able to see the predicted weather for the next 5 days. There is also a toggle button that allows the user to check the weather in degree Fahrenheits as the default weather is shown in degree Celsius.  
-
-You can find the website on https://weather-forecast-murex.vercel.app
+**Project Description** - This repo contains the code to the Weather Forecast Website that can be used to check the current weather and the weather forecast for the upcoming 5 days at different locations in the world. When the user enters a city name, they will be able to check the local temperature, maximum temperature, minimum temperature of the day along with the general description of the weather like cloudy/windy/misty, wind speed and precipitation. Additionally, they will be able to see the predicted weather for the next 5 days. There is also a toggle button that allows the user to check the weather in degree Fahrenheits as the default weather is shown in degree Celsius.  
 
 **Technologies used** - HTML, CSS, JavaScript
 
 **Frameworks/Libraries** - React
 
-**3rd party API used** - Weather DB. It is a free to use weather API that provides **hourly** weather updates and the weather forecast for the upcoming days. It requires no API key. 
+**3rd party API used** - Meteosource API - It has a free tier that provides current weather and the weather forecast for the upcoming days. 
 
 **React packages used** - 
 
 1. uuid - For generating unique values that will be passed as keys to list items
+
+2. celsius-to-fahrenheit - converts temperature from degree celsius to fahrenheit
 
 **Commit history** - 
 
@@ -30,6 +30,8 @@ You can find the website on https://weather-forecast-murex.vercel.app
 **Issues/Bugs** - 
 
 1. **OpenWeatherMap API** - The free version of OpenWeatherMap API doesn't contain the data for weather forecast of upcoming days and its weather icons are not clear at all. Because of this, I switched to Weather DB which has more useful data that can be used.  
+
+2. **WeatherDB API not working any longer (October 25 2022)** - WeatherDB API stopped working, so I switched to Meteosource API, which has a free tier that allows 10 calls/minute and 400 calls/day 
 
 # Getting Started with Create React App
 
