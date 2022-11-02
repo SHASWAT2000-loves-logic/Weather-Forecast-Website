@@ -30,7 +30,7 @@ You can find the website by clicking on this link - https://weather-forecast-lya
 
 **Final commit (1/11/2022)** - Updated the code to accomodate the fetched weather information from the Meteosource API and deployed the website on Vercel. 
 
-Note - The website is not responsive as it does not have any media queries. 
+Note - The website was designed only for desktop/laptop type devices and is not responsive on other devices as it does any have any media queries.   
 
 **Issues/Bugs** - 
 
@@ -46,7 +46,7 @@ To run the code on your machine, clone this repository
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can type the following in your terminal:
 
 ### `npm start`
 
