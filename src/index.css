@@ -136,8 +136,8 @@ input:focus::placeholder {
 /* Styling the card that will display the weather */
 
 .card{
-  padding: 40px 80px;
-  max-width: 65%;
+  padding: 35px 50px;
+  max-width: 60%;
   margin: auto;
   background-color: #16394c;
   border-radius: 10px;
@@ -314,7 +314,7 @@ input:focus::placeholder {
 /* day specific weather */
 
 .day_weather{
-  margin-right: 80px;
+  margin-right: 40px;
 }
 
 /* future weather */
