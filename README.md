@@ -18,17 +18,17 @@ You can find the website by clicking on this link - https://weather-forecast-lya
 
 **Commit history** - 
 
-**First major commit (4/10/2022)** - Created the blueprint for the UI, global context provider and displayed current weather. 
+**First major commit (10/4/2022)** - Created the blueprint for the UI, global context provider and displayed current weather. 
 
-**Second major commit (18/10/2022)** - Added the loader for user experience (UX), added functionality of displaying weather data information about a location according to user input.
+**Second major commit (10/18/2022)** - Added the loader for user experience (UX), added functionality of displaying weather data information about a location according to user input.
 
-**Third major commit (19/10/2022)** - Completed the UI, which shows the current weather and predicted weather for the next 5 days.  
+**Third major commit (10/19/2022)** - Completed the UI, which shows the current weather and predicted weather for the next 5 days.  
 
-**Fourth major commit (20/10/2022)** - Added user input validation, error message, unique keys to list items
+**Fourth major commit (10/20/2022)** - Added user input validation, error message, unique keys to list items
 
-**Fifth major commit (23/10/2022)** - Added functionality of conversion to degree Fahrenheits by using toggle switch
+**Fifth major commit (10/23/2022)** - Added functionality of conversion to degree Fahrenheits by using toggle switch
 
-**Final commit (1/11/2022)** - Updated the code to accomodate the fetched weather information from the Meteosource API and deployed the website on Vercel. 
+**Final commit (11/1/2022)** - Updated the code to accomodate the fetched weather information from the Meteosource API and deployed the website on Vercel. 
 
 Note - The website was designed only for desktop/laptop type devices and is not responsive on other devices as it does any have any media queries.   
 
