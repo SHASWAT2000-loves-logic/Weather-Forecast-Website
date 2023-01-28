@@ -15,6 +15,9 @@ You can find the website by clicking on this link - https://weather-forecast-lya
 
 2. celsius-to-fahrenheit - converts temperature from degree celsius to fahrenheit
 
+Media Queries - None
+
+**Motivation for the project** - To learn how to integrate 3rd party APIs into a React app, how to use context API and useEffect hook.   
 
 **Commit history** - 
 
@@ -36,7 +39,7 @@ Note - The website was designed only for desktop/laptop type devices and is not 
 
 1. **OpenWeatherMap API (resolved)** - The free version of OpenWeatherMap API doesn't contain the data for weather forecast of upcoming days and its weather icons are not clear at all. Because of this, I switched to Weather DB which has more useful data that can be used.  
 
-2. **WeatherDB API occasionally doesn't work (as of October 25 2022)** - WeatherDB API wasn't consistently working every time, and this led to 404 error. So I switched to Meteosource API, which provides its services 24 hours a day and is fully supported across all browsers. 
+2. **WeatherDB API occasionally doesn't work (as of October 25 2022) (resolved)** - WeatherDB API wasn't consistently working every time, and this led to 404 error. So I switched to Meteosource API, which provides its services 24 hours a day and is fully supported across all browsers. 
 
 3. **Environment variable for API key is not being recognized by Github (resolved)** - This was mostly a deploying problem related to Vercel rather than Github. I created an environment variable in Vercel and the application started working smoothly.  
 
