@@ -16,6 +16,9 @@ function Form() {
             placeholder="Search city"  
             spellCheck={false}
             required
+            title="Enter a city name"
+            onInvalid={(e) => e.target.setCustomValidity("Please enter a city name")}//displays this error when there is no user input
+            onInput={(e) => e.target.setCustomValidity("")}
           ></input>
           </div>
           <div>

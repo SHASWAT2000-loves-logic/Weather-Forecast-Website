@@ -37,7 +37,7 @@ export const WeatherProvider = ({ children }) => {
   // initially the checkbox is not checked
   const [checkedState, setCheckedState] = useState(false);
 
-  // using the fetch API to fetch the data from OpenWeatherMap API to display the weather
+  // using the fetch API to fetch the data from Meteosource API to display the weather
   // the process of fetching data is asynchronous
 
   const fetchWeather = async () => {
@@ -59,14 +59,13 @@ export const WeatherProvider = ({ children }) => {
 
       setShowError(false);
       setLoading(false);
-    } catch (e) {
-      // catching inavlid city/location entered by the user
-
+    } catch {
+      // catching inavlid city name entered by the user
       setShowData(false);
       setShowError(true); //show error
       setLoading(false);
 
-      // error message is removed 3 seconds after its initial appearance
+      // error message is removed 4 seconds after its initial appearance
       // no weather information is displayed
       setTimeout(() => {
         setShowError(false);
@@ -81,11 +80,16 @@ export const WeatherProvider = ({ children }) => {
   const getWeatherInfo = (e) => {
     setLoading(true);
     setShowError(false);
+    setCheckedState(false); //display temperature in degree Celsius as default
     let cityName = e.target[0].value; // storing the user input
 
     // removing all empty spaces at the start and end of the user input
 
     cityName = cityName.trim();
+
+    // if(cityName==""){
+    //   console.log("empty string");
+    // }
 
     // API doesn't allow city name to contain whitespaces, instead it allows hyphen (-) between words
     // Accepted - New-York-City, Error - New York City
@@ -103,20 +107,13 @@ export const WeatherProvider = ({ children }) => {
     e.preventDefault();
   };
 
-  // when the checkbox is clicked, we display weather in degree Fahrenheit
+  // when the checkbox is clicked, we change the temperature unit
+  // Celsius -> Fahrenheit or Fahrenheit -> Celsius
 
-  const celsiusToFahren = (e) => {
-    if (e.target.checked) {
-      setCheckedState((checked) => !checked);
-    }
+  const changeTempUnit = () => {
+    setCheckedState((checked) => !checked);
   };
 
-  // this is the default/unchecked state that displays weather in degree Celsius
-  const fahrenToCelsius = (e) => {
-    if (!e.target.checked) {
-      setCheckedState((checked) => !checked);
-    }
-  };
   return (
     <WeatherContext.Provider
       value={{
@@ -129,8 +126,7 @@ export const WeatherProvider = ({ children }) => {
         checkedState,
         getWeatherInfo,
         fetchWeather,
-        celsiusToFahren,
-        fahrenToCelsius,
+        changeTempUnit,
       }}
     >
       {children}

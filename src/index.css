@@ -146,6 +146,25 @@ input:focus::placeholder {
   color: #f1f1f1;
 }
 
+/* styling the error card which only consists of an error message */
+
+.error_card{
+  padding: 35px 50px;
+  max-width: 60%;
+  height: 350px;
+  margin: auto;
+  background-color: #16394c;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(255,255,255,0.19), 0 6px 6px rgba(255,255,255, 0.23);
+  border: 4px solid #608094;
+  color: #f1f1f1;
+  text-align: center;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* styling the location name */
 
 .location_info{
@@ -234,7 +253,7 @@ input:focus::placeholder {
 
 /* default state of checkbox */
 #button-1 .knobs:before {
-  content: '°C';
+  content: '°F';
   position: absolute;
   top: 4px;
   left: 4px;
@@ -253,7 +272,7 @@ input:focus::placeholder {
 
 /* when the checkbox is checked */
 #button-1 .checkbox:checked + .knobs:before {
-  content: '°F';
+  content: '°C';
   left: 72px;
   background-color: #f44336;
 }
@@ -342,11 +361,12 @@ input:focus::placeholder {
 /* styling the error message */
 
 .error{
-  margin-top: -50px;
+  margin-top: -40px;
   margin-right: 90px;
   text-align: center;
   color: white;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 24px;
+  margin-bottom: 40px;
 }
 
