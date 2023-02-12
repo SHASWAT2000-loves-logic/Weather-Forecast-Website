@@ -1,59 +1,13 @@
+# Issues resolved
 
-**Project Description** - This repo contains the code to the Weather Forecast Website that can be used to check the current weather and the weather forecast for the upcoming 5 days of different cities in the world. When the user enters a city name, they will be able to check the local temperature, maximum temperature, minimum temperature of the day along with the general description of the weather like cloudy/windy/misty, wind speed and precipitation. Additionally, they will be able to see the predicted weather for the next 5 days. There is also a toggle button that allows the user to check the weather in degree Fahrenheits as the default weather is shown in degree Celsius.  
+## 1. Got rid of the repeated code 
 
-You can find the website by clicking on this link - https://weather-forecast-lyart.vercel.app/
+I have pretty much the same code for displaying the weather in degree celsius and in degree fahrenheit, but I had two different if/else statements, one for displaying the weather in celsius and the other for displaying the weather in fahrenheit. I also had 2 different states/hooks for tracking the same toggle button event. Now, I am following the DRY approach and got rid of the repeated code and the extra useState hook which was tracking the change in state of the toggle button. There is only 1 hook that is tracking whether the toggle button is checker or not. 
 
-**Technologies used** - HTML, CSS, JavaScript
+## 2. Created an error card for invalid user input 
 
-**Frameworks/Libraries** - React
+In the earlier version, when there was an invalid user input, an error notification was shown to the user for 4 seconds, which meant that there was nothing to be shown to the user after the error message disappeared and the website felt very empty. To enhance user experience, I created an error card to display a message to the user, asking them to input some other city name to find out the weather. 
 
-**3rd party API used** - Meteosource API - It has a free tier that provides current weather and the weather forecast for the upcoming days. It has a maximum limit of 10 API calls per minute and 400 API calls per day 
+## 3. Changed browser warning in case of no user input
 
-**React packages used** - 
-
-1. uuid - For generating unique values that will be passed as keys to list items
-
-2. celsius-to-fahrenheit - converts temperature from degree celsius to fahrenheit
-
-
-**Commit history** - 
-
-**First major commit (4/10/2022)** - Created the blueprint for the UI, global context provider and displayed current weather. 
-
-**Second major commit (18/10/2022)** - Added the loader for user experience (UX), added functionality of displaying weather data information about a location according to user input.
-
-**Third major commit (19/10/2022)** - Completed the UI, which shows the current weather and predicted weather for the next 5 days.  
-
-**Fourth major commit (20/10/2022)** - Added user input validation, error message, unique keys to list items
-
-**Fifth major commit (23/10/2022)** - Added functionality of conversion to degree Fahrenheits by using toggle switch
-
-**Final commit (1/11/2022)** - Updated the code to accomodate the fetched weather information from the Meteosource API and deployed the website on Vercel. 
-
-Note - The website was designed only for desktop/laptop type devices and is not responsive on other devices as it does any have any media queries.   
-
-**Issues/Bugs** - 
-
-1. **OpenWeatherMap API (resolved)** - The free version of OpenWeatherMap API doesn't contain the data for weather forecast of upcoming days and its weather icons are not clear at all. Because of this, I switched to Weather DB which has more useful data that can be used.  
-
-2. **WeatherDB API occasionally doesn't work (as of October 25 2022)** - WeatherDB API wasn't consistently working every time, and this led to 404 error. So I switched to Meteosource API, which provides its services 24 hours a day and is fully supported across all browsers. 
-
-3. **Environment variable for API key is not being recognized by Github (resolved)** - This was mostly a deploying problem related to Vercel rather than Github. I created an environment variable in Vercel and the application started working smoothly.  
-
-# Getting Started with this project
-
-To run the code on your machine, clone this repository
-
-## Available Scripts
-
-In the project directory, you can type the following in your terminal:
-
-### `npm start`
-
-Runs the app in the development mode
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes
-
-
-
+In the earlier version, when the user tried to check the weather without entering any input, a browser warning was popping up, with the message - "Please fill out this field". I felt this message wasn't telling the user about the exact problem, so I changed it to "Please enter a city name". 
