@@ -1,25 +1,38 @@
 
-**Project Description** - This repo contains the code to the Weather Forecast Website that can be used to check the current weather and the weather forecast for the upcoming 5 days of different cities in the world. When the user enters a city name, they will be able to check the local temperature, maximum temperature, minimum temperature of the day along with the general description of the weather like cloudy/windy/misty, wind speed and precipitation. Additionally, they will be able to see the predicted weather for the next 5 days. There is also a toggle button that allows the user to check the weather in degree Fahrenheits as the default weather is shown in degree Celsius.  
+# Project Description
 
-You can find the website by clicking on this link - https://weather-forecast-lyart.vercel.app/
+This repo contains the code for my Weather Forecast website
 
-**Technologies used** - HTML, CSS, JavaScript
+## Features
 
-**Frameworks/Libraries** - React
+1. Enter a city name and find out the current weather at that place along with the maximum and minimum temperature of the day.
+2. Check other weather properties like description by a weather icon, precipitation and wind speed.
+3. Check weather forecast for the next 5 days. 
+4. A toggle button to get the temperature in degree Celsius and degree Fahrenheit (default unit).
+5. Error notification in case of no input or invalid user input. 
 
-**3rd party API used** - Meteosource API - It has a free tier that provides current weather and the weather forecast for the upcoming days. It has a maximum limit of 10 API calls per minute and 400 API calls per day 
+### Project link - https://weather-forecast-lyart.vercel.app/
 
-**React packages used** - 
+### Motivation for the project
 
-1. uuid - For generating unique values that will be passed as keys to list items
+To learn how to use REST API in a React app and handle events in React for interactivity in the website.
 
-2. celsius-to-fahrenheit - converts temperature from degree celsius to fahrenheit
+### Major takeaways from the project
 
-Media Queries - None
+1. How to use context API by using Context Provider.
+2. How to extensively use hooks like useState, useEffect, useContext
+3. How to store all images in a folder in an object and then import it to use them in the img tag.  
+4. How to fetch data from 3rd party REST API using async/await    
 
-**Motivation for the project** - To learn how to integrate 3rd party APIs into a React app, how to use context API and useEffect hook.   
+### Technologies used
 
-**Commit history** - 
+HTML, CSS, JavaScript
+
+### Frameworks/Libraries
+
+React
+
+### Commit history
 
 **First major commit (10/4/2022)** - Created the blueprint for the UI, global context provider and displayed current weather. 
 
@@ -33,15 +46,34 @@ Media Queries - None
 
 **Final commit (11/1/2022)** - Updated the code to accomodate the fetched weather information from the Meteosource API and deployed the website on Vercel. 
 
-Note - The website was designed only for desktop/laptop type devices and is not responsive on other devices as it does any have any media queries.   
+**Update (02/10/2023)** - Reduced repeating code and created a card to be displayed in case of invalid user input. 
 
-**Issues/Bugs** - 
+### 3rd party API used 
+
+Meteosource API - It has a free tier that provides current weather and the weather forecast for the upcoming days. It has a maximum limit of 10 API calls per minute and 400 API calls per day 
+
+### React packages used
+
+1. uuid - For generating unique values that will be passed as keys to list items
+
+2. celsius-to-fahrenheit - converts temperature from degree celsius to fahrenheit
+
+### Media Queries
+
+None 
+
+### Issues/Bugs 
 
 1. **OpenWeatherMap API (resolved)** - The free version of OpenWeatherMap API doesn't contain the data for weather forecast of upcoming days and its weather icons are not clear at all. Because of this, I switched to Weather DB which has more useful data that can be used.  
 
 2. **WeatherDB API occasionally doesn't work (as of October 25 2022) (resolved)** - WeatherDB API wasn't consistently working every time, and this led to 404 error. So I switched to Meteosource API, which provides its services 24 hours a day and is fully supported across all browsers. 
 
 3. **Environment variable for API key is not being recognized by Github (resolved)** - This was mostly a deploying problem related to Vercel rather than Github. I created an environment variable in Vercel and the application started working smoothly.  
+
+### How to further improve this website
+
+1. Have a dropdown of suggestions of cities related to the one that the user is inputting. 
+2. Add media queries 
 
 # Getting Started with this project
 
